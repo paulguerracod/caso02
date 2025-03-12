@@ -2557,6 +2557,10 @@ textarea.w-input, textarea.w-select {
   transform: translateX(-100px) rotate(5deg);
 }
 
+/* Retrasos escalonados */
+.fade-in:nth-child(1) { transition-delay: 0.1s; }
+.fade-in:nth-child(2) { transition-delay: 0.3s; }
+
 .h2 {
   letter-spacing: -1px;
   margin-top: 0;
