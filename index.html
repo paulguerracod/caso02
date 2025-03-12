@@ -8,6 +8,30 @@
         </script>
         <link href="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6476ac3cb41557a22aaf6ec7_Daki%2032.png" rel="shortcut icon" type="image/x-icon"/>
         <link href="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6476ac46c68c8d203589d697_Daki%20256.png" rel="apple-touch-icon"/>
+        <style>
+            /* Animación básica */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.8s ease-out;
+            }
+            
+            /* Clase que activa la animación */
+            .visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    
+            /* Estilo para imágenes */
+            .img-fade {
+                transition: all 1s ease;
+                transform: scale(0.95);
+            }
+    
+            .img-visible {
+                transform: scale(1);
+            }
+        </style>
     </head>
     <body class="body">
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
@@ -41,6 +65,7 @@
             </div>
         </div>
         <section class="section header">
+            <section class="fade-in">
             <div class="container-1180 header">
                 <div class="header-content">
                     <div class="header-split">
@@ -48,11 +73,11 @@
                         <p class="p-18 white">Effortlessly manage and organize chats, tasks, and files in one central location with our SaaS chat management solution</p>
                         <a href="#" class="btn get-started green w-inline-block">
                             <div class="text-btn">Get started for free</div>
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" loading="lazy" width="20" alt=""/>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" class="img-fade" loading="lazy" width="20" alt=""/>
                         </a>
                     </div>
                     <div class="hero-img">
-                        <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container.webp" loading="lazy" sizes="(max-width: 991px) 300px, 682px" alt="" width="682" srcset="https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-500.webp 500w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-800.webp 800w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-1080.webp 1080w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container.webp 1364w"/>
+                        <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container.webp" class="img-fade" loading="lazy" sizes="(max-width: 991px) 300px, 682px" alt="" width="682" srcset="https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-500.webp 500w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-800.webp 800w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-1080.webp 1080w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container.webp 1364w"/>
                     </div>
                 </div>
                 <div class="company">
@@ -61,20 +86,21 @@
                     </div>
                     <div class="company-wrap">
                         <div id="w-node-c3b77941-1319-0b19-0ab2-e28e3d045df8-c92f7c6e" class="company-item">
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da6fb7f3f096d3067153_Amazon.png" loading="lazy" alt=""/>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da6fb7f3f096d3067153_Amazon.png" class="img-fade" loading="lazy" alt=""/>
                         </div>
                         <div id="w-node-fd12c30a-1a42-c555-d5c7-e48aba5c0c31-c92f7c6e" class="company-item">
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da6f5e608d3b18999bb2_Github.png" loading="lazy" alt=""/>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da6f5e608d3b18999bb2_Github.png" class="img-fade" loading="lazy" alt=""/>
                         </div>
                         <div id="w-node-a0ee8de5-55b6-aeea-e9eb-b642b6f9dafa-c92f7c6e" class="company-item">
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da7029962bfa51122aae_Medium.png" loading="lazy" alt=""/>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da7029962bfa51122aae_Medium.png" class="img-fade" loading="lazy" alt=""/>
                         </div>
                         <div id="w-node-e1ffaf7d-4d14-9a1d-8e7d-ec4f0e49309a-c92f7c6e" class="company-item">
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da70a0ad83b277979c09_Notion.png" loading="lazy" alt=""/>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475da70a0ad83b277979c09_Notion.png" class="img-fade" loading="lazy" alt=""/>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
         </section>
         <section class="section offer">
             <div class="whipe-offer-section">
@@ -204,13 +230,8 @@
 </div>
 <div class="solution-split">
      <div class="solution-img">
-         <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img.png" loading="lazy" width="614" sizes="(max-width: 479px) 100vw, (max-width: 767px) 82vw, (max-width: 991px) 614px, 40vw" alt="" srcset="https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-500.png 500w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-800.png 800w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-1080.png 1080w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img.png 1228w"/>
+         <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img.png" class="img-fade" loading="lazy" width="614" sizes="(max-width: 479px) 100vw, (max-width: 767px) 82vw, (max-width: 991px) 614px, 40vw" alt="" srcset="https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-500.png 500w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-800.png 800w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-1080.png 1080w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img.png 1228w"/>
         </div>
-    </div>
-</div>
-<div class="solution-split">
-    <div class="solution-img">
-        <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img.png" loading="lazy" width="614" sizes="(max-width: 479px) 100vw, (max-width: 767px) 82vw, (max-width: 991px) 614px, 40vw" alt="" srcset="https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-500.png 500w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-800.png 800w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img-p-1080.png 1080w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/6475e3ec86e51dd65fd9581a_Solution%20img.png 1228w"/>
     </div>
 </div>
 </div>
@@ -228,7 +249,7 @@
                         </div>
                         <a href="#" class="btn get-started green w-inline-block">
                             <div class="text-btn">Get started for free</div>
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" loading="lazy" width="20" alt=""/></a>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" class="img-fade" loading="lazy" width="20" alt=""/></a>
                         </div>
                     </div>
                 </div>
@@ -248,7 +269,7 @@
                         <p class="p-18">And it&#x27;s free — two things everyone loves.</p>
                         <a href="#" class="btn get-started green w-inline-block">
                             <div class="text-btn">Get started for free</div>
-                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" loading="lazy" width="20" alt=""/>
+                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" class="img-fade" loading="lazy" width="20" alt=""/>
                         </a>
                     </div>
                 </div>
@@ -258,7 +279,7 @@
                     <div class="footer-top">
                         <div class="footer-split left">
                             <div class="footer-logo">
-                                <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64761de797a549432fbfd0d9_Daki%20logo%20blue.png" loading="lazy" width="94.5" alt=""/>
+                                <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64761de797a549432fbfd0d9_Daki%20logo%20blue.png" class="img-fade" loading="lazy" width="94.5" alt=""/>
                             </div>
                             <div class="p-16 grey footer">Effortlessly manage and organize chats, tasks, and files in one central location with our SaaS chat management solution</div>
                             <div class="subcribe-wrapper">
@@ -267,7 +288,7 @@
                                         <input class="input-form w-input" maxlength="256" name="name" data-name="Name" placeholder="Daki@example.com" type="email" id="name"/>
                                         <a href="#" class="btn subcribe w-inline-block">
                                             <div class="text-btn white">Subcribe</div>
-                                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/647692ccc8f16ba144f2d226_arrow-right.png" loading="lazy" width="20" alt="" class="arrow"/>
+                                            <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/647692ccc8f16ba144f2d226_arrow-right.png" class="img-fade" loading="lazy" width="20" alt="" class="arrow"/>
                                         </a>
                                     </form>
                                     <div class="w-form-done">
@@ -350,5 +371,6 @@
             window.dispatchEvent(new Event('scroll'));
             </script>
     </script>
+    <script src="animacion.js"></script>
 </body>
 </html>

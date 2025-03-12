@@ -2513,6 +2513,54 @@ textarea.w-input, textarea.w-select {
   display: flex;
 }
 
+/* Cambiar velocidad */
+.fade-in {
+  transition: all 1s ease-out; /* 1 segundo de duración */
+}
+
+/* Cambiar dirección de la animación */
+.from-left {
+  transform: translateX(-100px);
+}
+
+.from-right {
+  transform: translateX(100px);
+}
+
+/* Efecto de rotación */
+.rotate-in {
+  transform: rotate(15deg);
+}
+
+/* Cambiar velocidad */
+.fade-in {
+  transition: all 1s ease-out; /* 1 segundo de duración */
+}
+
+/* Cambiar dirección de la animación */
+.from-left {
+  transform: translateX(-100px);
+}
+
+.from-right {
+  transform: translateX(100px);
+}
+
+/* Efecto de rotación */
+.rotate-in {
+  transform: rotate(15deg);
+}
+
+/* Animación al pasar el mouse */
+.elemento-hover {
+  transition: transform 0.3s ease;
+}
+
+.elemento-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
 .h2 {
   letter-spacing: -1px;
   margin-top: 0;
