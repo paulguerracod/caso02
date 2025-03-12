@@ -2942,7 +2942,7 @@ textarea.w-input, textarea.w-select {
 
   /* Cambiar velocidad */
 .fade-in {
-  transition: all 3s ease-out; /* 1 segundo de duración */
+  transition: all 3s ease-out;
 }
 
 /* Cambiar dirección de la animación */
