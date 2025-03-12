@@ -345,30 +345,17 @@
             </section>
         </script>
         <script>
-            // Detectamos el scroll
-            window.addEventListener('scroll', () => {
-                // Seleccionamos todos los elementos con clase fade-in
-                const elementos = document.querySelectorAll('.fade-in');
-                
-                elementos.forEach(elemento => {
-                    // Calculamos posición del elemento
-                    const elementoTop = elemento.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    // Si el elemento está en el área visible
-                    if(elementoTop < windowHeight * 0.9) {
-                        elemento.classList.add('visible');
-                        
-                        // Animación para imágenes dentro del elemento
-                        const imagenes = elemento.querySelectorAll('.img-fade');
-                        imagenes.forEach((img, index) => {
-                            setTimeout(() => {
-                                img.classList.add('img-visible');
-                            }, index * 200); // Delay escalonado
-                        });
-                    }
-                });
-            });
+            // Ejemplo de activación al hacer scroll
+window.addEventListener('scroll', () => {
+    const elementos = document.querySelectorAll('.fade-in');
+    
+    elementos.forEach(elemento => {
+        if(elemento.getBoundingClientRect().top < window.innerHeight) {
+            elemento.classList.add('visible');
+            elemento.querySelector('img').classList.add('img-visible');
+        }
+    });
+});
             
             // Disparamos al cargar la página
             window.dispatchEvent(new Event('scroll'));
