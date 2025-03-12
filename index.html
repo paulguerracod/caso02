@@ -69,11 +69,15 @@
                     <div class="header-split">
                         <div class="fade-in">
                         <h1 class="h1 white">Manage Your Team&#x27;s Chats with Daki</h1>
+                        </div>
+                        <div clas="fade-in">
                         <p class="p-18 white">Effortlessly manage and organize chats, tasks, and files in one central location with our SaaS chat management solution</p>
-                        <a href="#" class="btn get-started green w-inline-block">
+                        <a href="#" class="btn get-started green w-inline-block"></a>
+
+                        </div>
+                    <div class="fade-in">
                             <div class="text-btn">Get started for free</div>
                             <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" class="img-fade" loading="lazy" width="20" alt=""/>
-                        </a>
                     </div>
                     </div>
                     <div class="hero-img">
@@ -102,6 +106,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </section>
         </section>
         <section class="section offer">
@@ -347,20 +352,23 @@
             </section>
         </script>
         <script>
-            // Ejemplo de activación al hacer scroll
-window.addEventListener('scroll', () => {
-    const elementos = document.querySelectorAll('.fade-in');
-    
-    elementos.forEach(elemento => {
-        if(elemento.getBoundingClientRect().top < window.innerHeight) {
-            elemento.classList.add('visible');
-            elemento.querySelector('img').classList.add('img-visible');
-        }
+            // Detectar scroll y posición de elementos
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Reiniciar animaciones al recargar
+window.addEventListener('beforeunload', () => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.classList.remove('visible');
     });
 });
-            
-            // Disparamos al cargar la página
-            window.dispatchEvent(new Event('scroll'));
             </script>
     </script>
     <script src="animacion.js"></script>
