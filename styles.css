@@ -2515,7 +2515,7 @@ textarea.w-input, textarea.w-select {
 
 /* Cambiar velocidad */
 .fade-in {
-  transition: all 1s ease-out; /* 1 segundo de duración */
+  transition: all 1s ease; /* 1 segundo de duración */
 }
 
 /* Cambiar dirección de la animación */
@@ -2534,7 +2534,7 @@ textarea.w-input, textarea.w-select {
 
 /* Cambiar velocidad */
 .fade-in {
-  transition: all 5s ease-out; /* 1 segundo de duración */
+  transition: all 5s ease; /* 1 segundo de duración */
 }
 
 /* Cambiar dirección de la animación */
@@ -2553,7 +2553,7 @@ textarea.w-input, textarea.w-select {
 
 /* Animación al pasar el mouse */
 .elemento-hover {
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
 }
 
 .elemento-hover:hover {
