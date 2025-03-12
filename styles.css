@@ -2514,10 +2514,20 @@ textarea.w-input, textarea.w-select {
 }
 
 .fade-in {
-  transition: 
-    opacity 2s cubic-bezier(0.4, 0, 0.2, 1), 
-    transform 1.5s ease-out;
+  opacity: 0;                   /* Inicia invisible */
+  transform: translateY(20px);  /* Posición inicial más abajo */
+  transition: all 1s ease;      /* Transición suave de 1s */
 }
+
+.fade-in.visible {
+  opacity: 1;                   /* Opacidad final */
+  transform: translateY(0);     /* Posición final */
+}
+
+/* Delays progresivos */
+.fade-in:nth-child(1) { transition-delay: 0.2s; }
+.fade-in:nth-child(2) { transition-delay: 0.4s; }
+.fade-in:nth-child(3) { transition-delay: 0.6s; }
 
 /* Cambiar dirección de la animación */
 .from-top {
