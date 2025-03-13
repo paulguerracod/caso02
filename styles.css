@@ -2535,7 +2535,7 @@ textarea.w-input, textarea.w-select {
 
 /* Cambiar dirección de la animación */
 .from-top {
-  transform: translateY(-50px); /* Desde arriba */
+  transform: translateY(50px); /* Desde arriba */
 }
 
 .from-bottom {
