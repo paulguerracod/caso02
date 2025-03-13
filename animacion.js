@@ -1,20 +1,23 @@
-const animationObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if(entry.isIntersecting) {
-            // Delay basado en posición del elemento
-            const delay = Array.from(entry.target.parentNode.children)
-                             .indexOf(entry.target) * 200;
-            
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, delay);
+          const delay = entry.target.dataset.delay || 100;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
         }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
     });
-}, {
-    rootMargin: '0px',
-    threshold: 0.2
-});
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    animationObserver.observe(el);
-});
+  
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+      
+      // Reset para animaciones al recargar
+      el.classList.remove('visible');
+      void el.offsetWidth; // Trigger reflow
+    });
+  });

@@ -10,27 +10,24 @@
         <link href="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/6476ac46c68c8d203589d697_Daki%20256.png" rel="apple-touch-icon"/>
         <style>
             /* Animación Base */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 
-        opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Estado Activo */
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Delays Responsivos */
-@media (min-width: 768px) {
-    .fade-in:nth-child(1) { transition-delay: 0.2s; }
-    .fade-in:nth-child(2) { transition-delay: 0.4s; }
-    .fade-in:nth-child(3) { transition-delay: 0.6s; }
-}
-        </style>
+/* Eliminar nth-child y usar atributos personalizados */
+.fade-in[data-delay="100"] { transition-delay: 0.1s; }
+.fade-in[data-delay="200"] { transition-delay: 0.2s; }
+.fade-in[data-delay="300"] { transition-delay: 0.3s; }
+/* Crear hasta delay 1000 si es necesario */
+    
+    </style>
     </head>
     <body class="body">
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
@@ -68,15 +65,19 @@
             <div class="container-1180 header">
                 <div class="header-content">
                     <div class="header-split">
-                        <div class="fade-in">
+                        <div class="fade-in" data-delay="100">
                         <h1 class="h1 white">Manage Your Team&#x27;s Chats with Daki</h1>
+                        </div>
+                        <div class="fade-in" data-delay="300">
                         <p class="p-18 white">Effortlessly manage and organize chats, tasks, and files in one central location with our SaaS chat management solution</p>
+                        </div>
+                        <div class="fade-in" data-delay="500">
                         <a href="#" class="btn get-started green w-inline-block">
                             <div class="text-btn">Get started for free</div>
                             <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755280418a4f486b14d17a_arrow-right.png" class="img-fade" loading="lazy" width="20" alt=""/></a></div>
                     </div>
                     <div class="hero-img">
-                        <div class="fade-in">
+                        <div class="fade-in" data-delay="700">
                         <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container.webp" class="img-fade" loading="lazy" sizes="(max-width: 991px) 300px, 682px" alt="" width="682" srcset="https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-500.webp 500w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-800.webp 800w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container-p-1080.webp 1080w, https://assets-global.website-files.com/647543863b2ddd2dc92f7c68/64755c56591b8cffd519a97e_Table%20container.webp 1364w"/>
                         </div>
                     </div>

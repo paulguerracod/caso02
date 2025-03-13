@@ -2517,7 +2517,11 @@ textarea.w-input, textarea.w-select {
   opacity: 0;                   /* Inicia invisible */
   transform: translateY(20px);  /* Posición inicial más abajo */
   transition: all 1s ease;      /* Transición suave de 1s */
+  min-height: 50px; /* Previene elementos vacíos */
+  will-change: opacity, transform; /* Optimiza para GPU */
+  backface-visibility: hidden;
 }
+
 
 .fade-in.visible {
   opacity: 1;                   /* Opacidad final */
