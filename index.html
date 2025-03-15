@@ -26,7 +26,85 @@
 .fade-in[data-delay="200"] { transition-delay: 0.2s; }
 .fade-in[data-delay="300"] { transition-delay: 0.3s; }
 /* Crear hasta delay 1000 si es necesario */
+
+/* Animación del dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 240px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+.dropdown-container:hover .dropdown-menu,
+.dropdown-container:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content {
+    padding: 1rem 0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 24px;
+    color: #2d3748;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+    background: #f7fafc;
+    color: #4a5568;
+    transform: translateX(5px);
+}
+
+/* Flecha indicadora */
+.dropdown-toggle::after {
+    content: '';
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-top: 5px solid currentColor;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-container:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
     
+    .dropdown-container:hover .dropdown-menu {
+        max-height: 500px;
+    }
+    
+    .dropdown-item {
+        color: white;
+        padding-left: 2rem;
+    }
+}
     </style>
     </head>
     <body class="body">
@@ -40,7 +118,18 @@
                     <a href="#" class="w-nav-brand">
                         <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/64754f3f415b3feee5fd24b7_Daki%20logo.png" loading="lazy" alt="" width="94.5" class="image"/></a>
                     <nav role="navigation" class="nav-menu w-nav-menu">
-                        <a href="#" class="nav-link white w-nav-link">Products</a>
+                        <div class="dropdown-container">
+                            <a href="#" class="nav-link white w-nav-link dropdown-toggle">Products</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <a href="#" class="dropdown-item">Chat Analytics</a>
+                                    <a href="#" class="dropdown-item">Team Collaboration</a>
+                                    <a href="#" class="dropdown-item">File Management</a>
+                                    <a href="#" class="dropdown-item">Integrations API</a>
+                                    <a href="#" class="dropdown-item">Security Suite</a>
+                                </div>
+                            </div>
+                        </div>
                         <a href="#" class="nav-link white w-nav-link">Features</a>
                         <a href="#" class="nav-link white w-nav-link">Pricing</a>
                         <a href="#" class="nav-link white w-nav-link">About</a>
