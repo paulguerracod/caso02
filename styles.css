@@ -2580,7 +2580,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .dropdown-item {
-  color: white;
+  color: rgb(15, 95, 214);
 }
 
 .dropdown-item:hover {
@@ -2906,6 +2906,7 @@ textarea.w-input, textarea.w-select {
   width: 25%;
   height: 100%;
   background-color: var(--light-green);
+  background-color:#00c50a ;
 }
 
 .box._1 {
