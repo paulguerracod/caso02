@@ -339,6 +339,19 @@
 .auth-link:hover {
     text-decoration: underline;
 }
+
+.w-form-done,
+.w-form-fail {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.w-form-done.show,
+.w-form-fail.show {
+    display: block;
+    opacity: 1;
+}
     </style>
     </head>
     <body class="body">
@@ -680,14 +693,13 @@
                             <div class="p-16 grey footer">Effortlessly manage and organize chats, tasks, and files in one central location with our SaaS chat management solution</div>
                             <div class="subcribe-wrapper">
                                 <div class="w-form">
-                                    <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="647543863b2ddd2dc92f7c6e" data-wf-element-id="24696453-99ae-c647-0181-b1eb5cd7e19e">
-                                        <input class="input-form w-input" maxlength="256" name="name" data-name="Name" placeholder="Daki@example.com" type="email" id="name"/>
-                                        <a href="#" class="btn subcribe w-inline-block">
+                                    <form id="email-form" name="email-form" class="form">
+                                        <input class="input-form w-input" name="email" placeholder="Daki@example.com" type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                                        <button type="submit" class="btn subcribe w-inline-block">
                                             <div class="text-btn white">Subcribe</div>
                                             <img src="https://cdn.prod.website-files.com/647543863b2ddd2dc92f7c68/647692ccc8f16ba144f2d226_arrow-right.png" class="img-fade" loading="lazy" width="20" alt="" class="arrow"/>
                                         </a>
                                         </div>
-                                    </form>
                                     <div class="w-form-done">
                                         <div>Thank you! Your submission has been received!</div>
                                     </div>
@@ -697,6 +709,7 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
                         <div class="footer-split">
                             <div class="footer-menu-wrapper">
                                 <div class="footer-menu">
@@ -793,6 +806,40 @@ document.getElementById('authContainer').addEventListener('click', (e) => {
 // Switch entre formularios
 document.getElementById('switchToLogin').addEventListener('click', () => {
     document.querySelector('[data-tab="login"]').click();
+});
+
+document.getElementById('email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const emailInput = document.getElementById('email');
+    const successMsg = document.querySelector('.w-form-done');
+    const errorMsg = document.querySelector('.w-form-fail');
+    
+    // Reset mensajes
+    successMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
+    
+    // Validación simple
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if(emailRegex.test(emailInput.value)) {
+        // Simular envío exitoso
+        successMsg.classList.add('show');
+        emailInput.value = ''; // Limpiar campo
+        
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(() => {
+            successMsg.classList.remove('show');
+        }, 3000);
+    } else {
+        // Mostrar error
+        errorMsg.classList.add('show');
+        
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(() => {
+            errorMsg.classList.remove('show');
+        }, 3000);
+    }
 });
             </script>
     </script>
