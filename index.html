@@ -105,6 +105,240 @@
         padding-left: 2rem;
     }
 }
+
+/* Animaciones */
+.auth-transition {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contenedor principal */
+.auth-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+/* Tarjeta de formulario */
+.auth-card {
+    background: white;
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+/* Mostrar animación */
+.auth-card.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Pestañas */
+.auth-tabs {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 2px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+    border-color: #4CAF50;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+/* Campos de formulario */
+.auth-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Botón principal */
+.auth-btn {
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Enlaces adicionales */
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* Animaciones */
+.auth-transition {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contenedor principal */
+.auth-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+/* Tarjeta de formulario */
+.auth-card {
+    background: white;
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+/* Mostrar animación */
+.auth-card.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Pestañas */
+.auth-tabs {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 2px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+    border-color: #4CAF50;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+/* Campos de formulario */
+.auth-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Botón principal */
+.auth-btn {
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Enlaces adicionales */
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
     </style>
     </head>
     <body class="body">
@@ -136,6 +370,53 @@
                     </nav>
                 </div>
                 <div class="navbar-right">
+                    <div class="auth-container auth-transition" id="authContainer">
+                        <div class="auth-card auth-transition" id="authCard">
+                            <div class="auth-tabs">
+                                <div class="auth-tab active" data-tab="register">Registro</div>
+                                <div class="auth-tab" data-tab="login">Login</div>
+                            </div>
+                    
+                            <!-- Formulario de Registro -->
+                            <form id="registerForm" class="auth-form">
+                                <div class="auth-form-group">
+                                    <label>Nombre completo</label>
+                                    <input type="text" class="auth-input" required>
+                                </div>
+                                
+                                <div class="auth-form-group">
+                                    <label>Correo electrónico</label>
+                                    <input type="email" class="auth-input" required>
+                                </div>
+                                
+                                <div class="auth-form-group">
+                                    <label>Contraseña</label>
+                                    <input type="password" class="auth-input" required>
+                                </div>
+                                
+                                <button type="submit" class="auth-btn">Crear cuenta</button>
+                            </form>
+                    
+                            <!-- Formulario de Login -->
+                            <form id="loginForm" class="auth-form" style="display: none;">
+                                <div class="auth-form-group">
+                                    <label>Correo electrónico</label>
+                                    <input type="email" class="auth-input" required>
+                                </div>
+                                
+                                <div class="auth-form-group">
+                                    <label>Contraseña</label>
+                                    <input type="password" class="auth-input" required>
+                                </div>
+                                
+                                <button type="submit" class="auth-btn">Iniciar sesión</button>
+                            </form>
+                    
+                            <div class="auth-links">
+                                <a class="auth-link" id="switchToLogin">¿Ya tienes cuenta? Inicia sesión</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#" class="btn login w-inline-block">
                         <div class="text-btn white">Get Started</div>
                     </a>
@@ -474,6 +755,44 @@ window.addEventListener('beforeunload', () => {
     document.querySelectorAll('.fade-in').forEach(el => {
         el.classList.remove('visible');
     });
+});
+
+// Mostrar/ocultar formularios
+document.querySelectorAll('.auth-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        document.querySelectorAll('.auth-form').forEach(form => {
+            form.style.display = 'none';
+        });
+        
+        document.getElementById(tab.dataset.tab + 'Form').style.display = 'block';
+    });
+});
+
+// Mostrar formulario desde el botón
+document.querySelector('.btn.create-account').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('authContainer').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('authCard').classList.add('active');
+    }, 50);
+});
+
+// Ocultar al hacer clic fuera
+document.getElementById('authContainer').addEventListener('click', (e) => {
+    if(e.target === document.getElementById('authContainer')) {
+        document.getElementById('authCard').classList.remove('active');
+        setTimeout(() => {
+            document.getElementById('authContainer').style.display = 'none';
+        }, 300);
+    }
+});
+
+// Switch entre formularios
+document.getElementById('switchToLogin').addEventListener('click', () => {
+    document.querySelector('[data-tab="login"]').click();
 });
             </script>
     </script>
